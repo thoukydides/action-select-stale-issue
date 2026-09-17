@@ -73,7 +73,7 @@ jobs:
         days_before_stale: 14
         days_before_close: 7
         stale_issue_label: 'stale'
-        issue_number: ${{ fromJson(inputs.issue_number) }}
+        issue_number: ${{ inputs.issue_number }}
 
     - name: Label stale issue
       if: ${{ steps.select.outputs.stale_issue_number != '' }}
