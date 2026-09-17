@@ -1,0 +1,38 @@
+name: Select Stale Issue
+author: Alexander Thoukydides
+description: Select stale issues based on a given number of days since last update
+branding:
+  icon: 'clock'
+  color: 'blue'
+
+inputs:
+  days_before_stale: 
+    description: The number of days since the last relevant activity on a non-stale issue before it is considered stale
+    required: true
+    default: 14
+  days_before_close: 
+    description: The number of days since the last relevant activity on a stale issue before it is closed
+    required: true
+    default: 7
+  stale_issue_label: 
+    description: The label applied to stale issues
+    required: true
+    default: 'stale'
+  issue_number:
+    description: The GitHub issue to treat as stale; if not provided, a stale issue is selected based on the number of days since last update
+    required: false
+    type: number
+  github_token:
+    description: The GitHub token used to create an authenticated client
+    type: string
+    default: ${{ github.token }}
+
+outputs:
+  stale_issue_number:
+    description: An issue that should be labelled as stale, if any
+  close_issue_number:
+    description: An issue that should be closed, if any
+
+runs:
+  using: node24
+  main: dist/index.js

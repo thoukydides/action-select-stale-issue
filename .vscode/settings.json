@@ -1,0 +1,22 @@
+{
+    "files.eol": "\n",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "editor.rulers": [
+        80
+    ],
+    "eslint.enable": true,
+    "cSpell.words": [
+        "aeiou",
+        "buymeacoffee",
+        "color",
+        "milestoned",
+        "Thoukydides",
+        "unlabeled"
+    ],
+    "files.exclude": {
+        "node_modules/": true
+    },
+    "js/ts.tsdk.path": "node_modules/typescript/lib"
+}
